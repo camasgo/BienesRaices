@@ -1,0 +1,25 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="example.xml"/>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="insertarPropiedad" class="com.bienesraicesa80703.application.action.InsertarPropiedadAction" >
+            <interceptor-ref name="defaultStack">
+                <param name="validation.excludeMethods">execute</param>
+            </interceptor-ref>
+            <result name="input" type="dispatcher">insertarPropiedad.jsp</result>        
+        </action>
+        <action name="guardarPropiedad" method="insertar" class="com.bienesraicesa80703.application.action.InsertarPropiedadAction" >
+            <interceptor-ref name="defaultStack">
+                <param name="validation.excludeMethods">execute</param>
+            </interceptor-ref>
+            <result name="input" type="dispatcher">insertarPropiedad.jsp</result>
+            <result name="success" type="dispatcher">exito.jsp</result>            
+        </action>
+    </package>
+</struts>
+
+
